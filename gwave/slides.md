@@ -16,6 +16,7 @@ LIGO
 
 * Detects strain in mirror position by interferometry
 
+
 Michelson Interferometer 
 ------------------------
 <img src="michelson.jpg " height = "500">
@@ -31,9 +32,16 @@ Principle
 
 * Difference in path lengths leds to interference
 
-* Different from the antena principle, hence no relation to lengths
+* Different from the antena principle, hence no relation to length
 
 * Longer path gives better strain precision
+
+* Match the signal with a known template from numerical relativity
+
+Detecting gravitational waves
+-----------------------------
+
+<img src="gravity_wave_descp.png" height = "500"> 
 
 Data
 ---------
@@ -150,3 +158,23 @@ Data Analysis
 * Matched waveform
 
 <img src="fig2q.png" height = "500">
+
+Summary
+-----------
+
+* Event occurred : September 14 2015, 09:50:45 UTC. 
+
+* Event : Merger of binary black hole system
+
+* Peak displacement of interferometer arms : +/- 0.002 fm
+
+* CPU hours consumed : 20 000 PCs running for 100 days
+
+Audio
+-----
+
+* Frequency of signal is in audible range : 20 Hz - 300 Hz
+
+* After whitening and bandpassing we can shift the frequency to hear the signal
+
+* [Gravitational wave signal from Hanford data](https://losc.ligo.org/s/events/GW150914/audio/GW150914_H1_shifted.wav)
