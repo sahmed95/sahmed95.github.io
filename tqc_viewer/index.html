@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>TQC viewer</title>
+
+<script src="js/jquery/jquery.min.js"></script>
+<script src="js/jquery-tmpl/jquery.tmpl.min.js"></script>
+<script src="js/tether/tether.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/tqc/tqc.js"></script>
+<script src="js/tqc/settings.js"></script>
+<script src="js/three/three.min.js"></script>
+<script src="js/three/OrbitControls.js"></script>
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+  <a class="navbar-brand" href="index.html">TQC viewer</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a id="nav-samples" class="nav-link" href="#">Samples</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showSettingsModal()">Settings</a>
+    </li>
+  </ul>
+  <div class="float-xs-right">
+    <button id="back-button" class="btn btn-outline-success" style="visibility: hidden; margin-right: 5px;">Back</button>
+    <button id="reset-button" class="btn btn-outline-danger" style="visibility: hidden;">Reset</button>
+  </div>
+</nav>
+
+<!-- Drag & Drop area -->
+<div id="drop-zone">Please drag and drop the files.</div>
+<input type="file" id="file-selector" style="visibility: hidden;" accept=".json" />
+
+<!-- Canvas -->
+<div id="canvas" style="display: none;"></div>
+
+<!-- Samples modal -->
+<div class="modal fade" id="samples-modal" tabindex="-1" role="dialog" aria-labelledby="samples-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="settings-modal-label">Samples</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div id="sample-list"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings modal -->
+<div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="settings-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="settings-modal-label">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4"><h5>Size</h5></div>
+          </div>
+          <div class="row" style="margin: 5px 10px -5px;">
+            <div class="col-md-2">Margin</div>
+            <div class="col-md-4 form-group"><input type="number" id="margin-setting" class="form-control form-control-sm" min="0.5" step="0.5" required /></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4"><h5>Colors</h5></div>
+          </div>
+          <div class="row" style="margin: 5px 10px 10px;">
+            <div class="col-md-2">Rough</div>
+            <div class="col-md-4"><input type="color" id="color-rough-setting" class="form-control" required /></div>
+          </div>
+          <div class="row" style="margin: 10px;">
+            <div class="col-md-2">Smooth</div>
+            <div class="col-md-4"><input type="color" id="color-smooth-setting" class="form-control" required /></div>
+          </div>
+          <div class="row" style="margin: 10px;">
+            <div class="col-md-4">Overwrite</div>
+            <div class="col-md-2">
+              <div class="material-switch float-md-right">
+                <input type="checkbox" id="color-overwrite-setting" value="1" />
+                <label for="color-overwrite-setting" class="label-primary"></label>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4"><h5>Light</h5></div>
+          </div>
+          <div class="row" style="margin: 5px 10px 10px;">
+            <div class="col-md-5">Auto following</div>
+            <div class="col-md-1">
+              <div class="material-switch float-md-right">
+                <input type="checkbox" id="light-auto-following-setting" value="1" />
+                <label for="light-auto-following-setting" class="label-primary"></label>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4"><h5>Display edges</h5></div>
+            <div class="col-md-2">
+              <div class="material-switch float-md-right">
+                <input type="checkbox" id="display-edges-setting" value="1" />
+                <label for="display-edges-setting" class="label-primary"></label>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4"><h5>Antialias</h5></div>
+            <div class="col-md-2">
+              <div class="material-switch float-md-right">
+                <input type="checkbox" id="antialias-setting" value="1" />
+                <label for="antialias-setting" class="label-primary"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="loadDefaultSettings()">Load defaults</button>
+        <button type="button" class="btn btn-primary" onclick="saveSettings(); hideSettingsModal()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Description text -->
+<div id="description-area" class="description-area"></div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is a Topological Quantum Circuit viewer made in Prof. Shigeru Yamashita's lab - [Next Generation Computing](http://www.ngc.is.ritsumei.ac.jp) at Ritsumeikan University, Japan by [Koutarou Hoshi](hossy@ngc.is.ritsumei.ac.jp).
