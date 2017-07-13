@@ -505,8 +505,21 @@ html { box-sizing: border-box; }
 .text-turquoise a { color: #0fbfcf; }
 .bg-turquoise     { background-color: #0fbfcf !important; }
 
+.border-paige { border-color: #0fbfcf !important; }
+.text-paige   { color: #0fbfcf; }
+.text-paige a { color: #0fbfcf; }
+.bg-paige     { background-color: #0fbfcf !important; }
+
 
 /* ----- per-post colors! ----- */
+
+  
+  
+  
+  nav .p-resources { border-color: turquiose; }
+  #resources { background-color: turquiose !important; color: #111111; }
+  #resources a { color: #111111; }
+  #resources .sectiondivider { color: turquiose; }
 
   
   

@@ -26,6 +26,9 @@
         
         <li class="p-contact"><a href="#contact">Contact</a></li>
       
+        
+        <li class="p-resources"><a href="#resources">Resources</a></li>
+      
     </ul></nav>
 
 
@@ -143,6 +146,79 @@ Photo layouts are also really cool and dynamically resizable. Check out the phot
 
 <div class="icontain"><iframe src="//www.youtube.com/embed/8yis7GzlXNM" allowfullscreen></iframe></div>
  -->
+
+        </div>
+      </div>
+    
+      
+      <div id="resources" class="section p-resources">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-book fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Resources</h5>
+        </div>
+        
+        <div class="container ">
+          <h3><a href="https://drive.google.com/open?id=0BwMeZIJ7VlY9cWlwcWNnUnBwQk0">1. Machine Learning Phases of matter</a></h3>
+
+<p align="center">(Juan Carrasquilla and Roger G. Melko, Nature Physics, Feb 2017)</p>
+
+<h4>This is a very interesting and simple to understand article on how a neural network can “learn” physical laws.</h4>
+
+<ul>
+  <li>Using Neural Networks to classify phase in a simple square lattice Ising model</li>
+  <li>Data generated for high temperature and low temperature cases using Standard Monte Carlo techniques assuming given model</li>
+  <li>Neural network consisting of one hidden layer with three neurons for detecting ↑ ↓ and un-polarised spins can classify the state and get a good value of the critical temperature for cross-over</li>
+  <li>The weights get adjusted to approximately become linear functions of the magnetization. Even a more complicated network of 100 neurons gets clustered into the broad categories making a decission based on polarisation.</li>
+  <li>The supplementary discusses the Aubry-Andre model and why a Convolutional Neural Network has a high discriminative power in classifying Metallic/Anderson localised phases.</li>
+  <li>In the context of the Ising Lattice Guage Theory, the Convolutional layer filters determine whether energetic constraints of individual plaquettes are satisfied or not.</li>
+</ul>
+
+<hr />
+
+<h3><a href="https://drive.google.com/file/d/0BwMeZIJ7VlY9RmpqSEZNd3gtVm8/view?usp=sharing">2. Multilayer Feedforward Networks are Universal Approximators</a></h3>
+
+<p align="center">(Kurt Hornik, Mar 1989)</p>
+
+<h4>An early paper with over 14,000 citations proving that a Neural Networks can universally approximate any measureable (Borel) function.</h4>
+
+<ul>
+  <li>Rigourously establishes that feedforward networks with just one hidden layer using arbitrary sqaushing functions can approximate any Borel measureable function from one finite dimensional space to another to any degree of accuracy.</li>
+  <li>This is on the condition that sufficient hidden units are available.</li>
+  <li>Try out this cool tool to see this for yourself by making a simple NN in your browser, constructing an arbitrary function by mouse clicking and looking at the Neural Network approximate it - <a href="http://cs.stanford.edu/people/karpathy/convnetjs/demo/regression.html">convnetjs</a></li>
+  <li>While attempting to guess a quadratic, I faced the issue of selecting the optimizer and batch size. Beware of that ! This paper - <a href="https://arxiv.org/abs/1609.04836">On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima (Keskar et al., Feb 2017)</a> could be helpful.</li>
+</ul>
+
+<hr />
+
+<h3><a href="https://www.microsoft.com/en-us/research/publication/learning-polynomials-with-neural-networks/">3. Learning Polynomials Using Neural Networks</a></h3>
+
+<p align="center">(Andoni et al., Microsoft Research, Jun 2014)</p>
+
+<ul>
+  <li>Learning low degree polynomial using gradient descent</li>
+  <li>Using complex valued weights, “robust local minamas” can be eliminated.</li>
+  <li>Can sparse polynomials be learnt with small neural networks ?</li>
+  <li>Also check this paper on <a href="http://dl.acm.org/citation.cfm?id=1622312">Numeric law discovery using Neural Networks</a> (Saito and Nakano, NTT Labs, Japan, Aug, 1998)</li>
+</ul>
+
+<hr />
+
+<h3><a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.94.012214">4. Prediction of dynamical systems by symbolic regression</a></h3>
+
+<p align="center">(Quade et al., Phys. Rev. E 94, 012214, July 2016)</p>
+
+<ul>
+  <li>Symbolic regression is a Machine Learning technique for model finding. It does not require a specific model to start searching for the structure hidden in data and works by combinining mathematical building blocks using algorithms such as genetic programming.</li>
+  <li>This paper investigates the so-called fast function extraction which is a generalized linear regression algorithm, and genetic programming.</li>
+  <li>The methods are illustrated by applying them to a simple harmonic oscillator, FitzHugh-Nagumo oscillators, which are known to produce complex behaviour and short-term and medium-term forecasting of solar power production.</li>
+</ul>
+
+<hr />
+
 
         </div>
       </div>
