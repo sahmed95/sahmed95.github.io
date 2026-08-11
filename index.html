@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shabab — Economics, University of Washington</title>
-<meta name="description" content="Shabab, Ph.D. candidate in Economics at the University of Washington. Research in contract theory, structural estimation, and high-dimensional demand estimation.">
+<title>Shabab Ahmed — Economics, University of Washington</title>
+<meta name="description" content="Shabab Ahmed, Ph.D. candidate in Economics at the University of Washington. Research in contract theory, structural estimation, and high-dimensional demand estimation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14171F;
-    --paper:#F6F4EF;
-    --cobalt:#2E4BFF;
-    --signal:#FF6B35;
-    --line:#D8D4C9;
-    --faint:#6B7280;
+    --ink:#F4F2EC;
+    --paper:#12141C;
+    --cobalt:#5B7CFF;
+    --signal:#FF7A47;
+    --line:#2A2D3A;
+    --faint:#9A9DAD;
     --maxw:880px;
   }
   *{box-sizing:border-box;}
@@ -59,7 +59,7 @@
   /* nav */
   header{
     position:sticky; top:0; z-index:10;
-    background:rgba(246,244,239,0.92);
+    background:rgba(18,20,28,0.92);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
@@ -85,6 +85,21 @@
 
   /* hero */
   .hero{padding:88px 0 64px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 220px;
+    gap:44px;
+    align-items:start;
+  }
+  .hero-photo img{
+    width:100%; aspect-ratio:1/1; object-fit:cover;
+    border:1px solid var(--line);
+    filter:grayscale(15%);
+  }
+  @media (max-width:640px){
+    .hero-grid{grid-template-columns:1fr; gap:28px;}
+    .hero-photo{width:140px; order:-1;}
+  }
   .hero .mono{color:var(--cobalt); margin-bottom:18px; display:flex; align-items:center; gap:9px;}
   .hero h1{font-size:clamp(38px,6vw,58px); line-height:1.04;}
   .hero .role{
@@ -115,7 +130,7 @@
   .section-head h2{font-size:22px;}
 
   /* about */
-  .about p{max-width:640px; color:#2A2E38;}
+  .about p{max-width:640px; color:var(--faint);}
 
   /* research: matrix-style cards */
   .research-grid{
@@ -131,9 +146,9 @@
     background:var(--ink); color:var(--paper);
     padding:26px 24px;
   }
-  .jmp .tag{color:#9DB0FF; margin-bottom:10px; display:block;}
+  .jmp .tag{color:#2E4BFF; margin-bottom:10px; display:block;}
   .jmp h3{font-size:19px; color:var(--paper); margin-bottom:10px;}
-  .jmp p{color:#C7C9D1; margin:0; font-size:15px;}
+  .jmp p{color:#4A4D5C; margin:0; font-size:15px;}
   .jmp a{color:var(--paper); text-decoration:underline; text-underline-offset:3px;}
 
   /* publications / working papers list */
@@ -200,12 +215,14 @@
 
 <header>
   <nav class="wrap">
-    <span class="nav-name">Shabab</span>
+    <span class="nav-name">Shabab Ahmed</span>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#other-experience">Other</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -213,17 +230,25 @@
 
 <main>
   <section class="hero wrap" style="border-top:none;">
-    <div class="mono"><span class="mark"><span></span><span></span><span></span><span></span></span> Ph.D. Candidate, Economics</div>
-    <h1>Shabab</h1>
-    <p class="role">University of Washington &nbsp;·&nbsp; Contract Theory &amp; Structural Estimation</p>
-    <p class="thesis">
-      My research sits at the intersection of microeconomic theory and structural estimation —
-      building contract-theoretic models and estimating high-dimensional demand systems to understand
-      how incentives and information shape economic outcomes.
-    </p>
-    <div class="cta-row">
-      <a class="btn primary" href="cv.pdf">Download CV</a>
-      <a class="btn ghost" href="#research">View Research</a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="mono"><span class="mark"><span></span><span></span><span></span><span></span></span> Ph.D. Candidate, Economics</div>
+        <h1>Shabab Ahmed</h1>
+        <p class="role">University of Washington &nbsp;·&nbsp; Contract Theory &amp; Structural Estimation</p>
+        <p class="thesis">
+          My research focuses on microeconomic theory and structural estimation. I study dynamic moral
+          hazard and incentive design to understand how institutions and agents adapt when preferences
+          and constraints evolve. Separately, I estimate high-dimensional demand systems, using
+          regularization methods to address the collinearity and scale of modern real-world data.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="Ahmed_Shabab_CV.pdf">Download CV</a>
+          <a class="btn ghost" href="#research">View Research</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="portrait.jpg" alt="Shabab Ahmed">
+      </div>
     </div>
   </section>
 
@@ -234,13 +259,18 @@
     </div>
     <p>
       I am a Ph.D. candidate in Economics at the University of Washington, expecting to finish in
-      fall 2026. My work combines microeconomic theory — particularly contract theory — with structural
-      estimation methods applied to high-dimensional demand settings.
+      Fall 2026, advised by Fahad Khalil and Jacques Lawarrée. My dissertation looks separately
+      at dynamic moral hazard theory and structural estimation methods applied to high-dimensional
+      demand settings.
     </p>
     <p>
-      I spent a summer as an Economist Intern at Amazon, where I built structural demand models and
-      counterfactual simulation tools. Alongside my research, I teach Game Theory as an independent
-      instructor and serve as a TA for Graduate Microeconomic Theory at UW.
+      I am on the industry job market this year.
+    </p>
+    <p>
+      In 2025 I was an Economist Intern at Amazon, where I built structural demand models on large-scale
+      survey data for Project Kuiper and a simulation engine for evaluating counterfactual pricing and
+      product scenarios. I hold an M.A. in Economics and an M.S. in Applied Mathematics from UW, and a
+      B.A. in Mathematics and Economics from Colby College (Magna Cum Laude, Phi Beta Kappa).
     </p>
   </section>
 
@@ -250,44 +280,66 @@
       <h2>Research</h2>
     </div>
 
+    <p class="mono" style="color:var(--faint); margin-bottom:18px;">Dissertation Chapters</p>
     <div class="research-grid">
       <div class="jmp">
-        <span class="tag mono">Job Market Paper</span>
-        <h3>[Job market paper title]</h3>
+        <span class="tag mono">Chapter 1</span>
+        <h3>Dynamic Moral Hazard and Incentive Design</h3>
         <p>
-          One or two sentences on the question, method, and finding. Keep it readable to a
-          non-specialist search committee member skimming quickly.
-          <a href="#">Draft (PDF) →</a>
+          How institutions should adapt incentive schemes when agents' preferences evolve over time,
+          applied to NFL draft policy.
+          <a href="https://github.com/sahmed95/Tanking-from-the-Start-Dynamic-Moral-Hazard-with-Change-in-Preference">Repo →</a>
         </p>
       </div>
       <div class="research-card">
-        <span class="tag mono">Working Paper</span>
-        <h3>[Paper title]</h3>
-        <p>Short one-line description of the paper's contribution.</p>
+        <span class="tag mono">Chapter 2 · Work in Progress</span>
+        <h3>Dynamic Moral Hazard Under a Fixed Budget</h3>
+        <p>How agents allocate spending across time under a budget constraint, and how this can explain budget hoarding and end-of-year spending spikes.</p>
+        <p style="margin-top:8px;"><a href="https://github.com/sahmed95/Fixed-Budget-MH" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a></p>
       </div>
       <div class="research-card">
-        <span class="tag mono">Working Paper</span>
-        <h3>[Paper title]</h3>
-        <p>Short one-line description of the paper's contribution.</p>
+        <span class="tag mono">Chapter 3</span>
+        <h3>High-Dimensional Demand Estimation</h3>
+        <p>Using Lasso and Elastic Net regularization with debiasing corrections to estimate elasticity under collinearity, validated via Monte Carlo simulation.</p>
+        <p style="margin-top:8px;"><a href="https://github.com/sahmed95/Almost-Ideal-Demand-System-HD-IV" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a></p>
       </div>
     </div>
+  </section>
 
-    <ul class="paper-list" style="margin-top:36px;">
+  <section id="projects" class="wrap">
+    <div class="section-head">
+      <span class="mark"><span></span><span></span><span></span><span></span></span>
+      <h2>Projects</h2>
+    </div>
+    <ul class="paper-list">
       <li>
-        <span class="paper-year">2025</span>
+        <span class="paper-year">2020</span>
         <div class="paper-body">
-          <h3>[Publication or working paper title]</h3>
-          <p>[Co-authors, if any] · [Journal name or "Working Paper"]</p>
+          <h3>NBA Decade Comparison: PCA and Machine Learning Analysis</h3>
+          <p>Built classifiers on 13,000 player-season observations, using roughly 95 features scraped from Basketball Reference. Used PCA and LDA to predict player position and decade, and L1-regularized logistic regression to predict Win Shares quartile, achieving 72.6% accuracy validated via 50-fold cross-validation.</p>
+          <p style="margin-top:6px;"><a href="https://github.com/sahmed95?tab=repositories" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
         </div>
       </li>
       <li>
-        <span class="paper-year">2024</span>
+        <span class="paper-year">2019</span>
         <div class="paper-body">
-          <h3>[Publication or working paper title]</h3>
-          <p>[Co-authors, if any] · [Journal name or "Working Paper"]</p>
+          <h3>Game Theory in Cricket</h3>
+          <p>Built a formal game-theoretic model of bowler-batsman strategy, validated against an original dataset built from match commentary. Implemented in Stata.</p>
+          <p style="margin-top:6px;"><a href="https://github.com/sahmed95/Game-Theory-in-Cricket" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="paper-year">2019</span>
+        <div class="paper-body">
+          <h3>Attacks on RSA</h3>
+          <p>Implemented and analyzed multiple RSA cryptographic attacks in Python.</p>
+          <p style="margin-top:6px;"><a href="https://github.com/sahmed95/Attacks-on-RSA" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
         </div>
       </li>
     </ul>
+    <div style="margin-top:24px;">
+      <a class="btn ghost" href="https://github.com/sahmed95">More on GitHub →</a>
+    </div>
   </section>
 
   <section id="teaching" class="wrap">
@@ -296,13 +348,34 @@
       <h2>Teaching</h2>
     </div>
     <div class="teach-row">
-      <h3>Game Theory</h3>
+      <h3>ECON 485 — Game Theory</h3>
       <span class="role-tag">Independent Instructor · UW</span>
     </div>
     <div class="teach-row">
-      <h3>Graduate Microeconomic Theory</h3>
-      <span class="role-tag">Teaching Assistant · UW</span>
+      <h3>ECON 200 — Introduction to Microeconomics</h3>
+      <span class="role-tag">Independent Instructor · UW</span>
     </div>
+    <div class="teach-row">
+      <h3>Graduate &amp; Undergraduate Economics, various courses</h3>
+      <span class="role-tag">Teaching Assistant · UW · 2019–present</span>
+    </div>
+  </section>
+
+  <section id="other-experience" class="wrap">
+    <div class="section-head">
+      <span class="mark"><span></span><span></span><span></span><span></span></span>
+      <h2>Other Experience</h2>
+    </div>
+    <div class="teach-row">
+      <h3>Summer Study Section Instructor</h3>
+      <span class="role-tag">UW Math and Science Bound Upward · Summer 2024 &amp; Summer 2026</span>
+    </div>
+    <p style="color:var(--faint); font-size:15px; margin-top:-8px; margin-bottom:20px;">Mentored students through independent research projects. Guided a hands-on solar car build.</p>
+    <div class="teach-row">
+      <h3>Intramural Referee</h3>
+      <span class="role-tag">UW Recreation · 2023</span>
+    </div>
+    <p style="color:var(--faint); font-size:15px; margin-top:-8px;">Officiated soccer games and handled on-field conflicts.</p>
   </section>
 
   <section id="contact" class="wrap">
@@ -312,16 +385,17 @@
     </div>
     <p>Reach me by email, or find my CV and profiles below.</p>
     <div class="contact-links">
-      <a class="btn ghost" href="mailto:your-email@uw.edu">Email</a>
-      <a class="btn ghost" href="#">CV (PDF)</a>
-      <a class="btn ghost" href="#">Google Scholar</a>
-      <a class="btn ghost" href="#">LinkedIn</a>
+      <a class="btn ghost" href="mailto:sahmed95@uw.edu">UW Email</a>
+      <a class="btn ghost" href="mailto:shababahmed1995@gmail.com">Personal Email</a>
+      <a class="btn ghost" href="Ahmed_Shabab_CV.pdf">CV (PDF)</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/shabab-ahmed-1bb928194/">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/sahmed95">GitHub</a>
     </div>
   </section>
 </main>
 
 <footer class="wrap">
-  © <span id="year"></span> Shabab · Built with a 2×2.
+  © <span id="year"></span> Shabab Ahmed · Built with a 2×2.
 </footer>
 
 <script>
