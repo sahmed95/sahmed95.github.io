@@ -219,6 +219,7 @@
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#teaching">Teaching</a></li>
@@ -236,10 +237,10 @@
         <h1>Shabab Ahmed</h1>
         <p class="role">University of Washington &nbsp;·&nbsp; Contract Theory &amp; Structural Estimation</p>
         <p class="thesis">
-          My research focuses on microeconomic theory and structural estimation. I study dynamic moral
-          hazard and incentive design to understand how institutions and agents adapt when preferences
-          and constraints evolve. Separately, I estimate high-dimensional demand systems, using
-          regularization methods to address the collinearity and scale of modern real-world data.
+          I work in contract theory and structural modeling. My research studies the design of
+          incentives when preferences or organizational constraints change. I also ask how to estimate
+          demand reliably from complex, real-world data. I have applied this research as an Economist
+          Intern at Amazon.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="Ahmed_Shabab_CV.pdf">Download CV</a>
@@ -258,19 +259,33 @@
       <h2>About</h2>
     </div>
     <p>
-      I am a Ph.D. candidate in Economics at the University of Washington, expecting to finish in
-      Fall 2026, advised by Fahad Khalil and Jacques Lawarrée. My dissertation looks separately
-      at dynamic moral hazard theory and structural estimation methods applied to high-dimensional
-      demand settings.
+      I am a Ph.D. candidate in Economics at the University of Washington, advised by
+      <a href="https://econ.washington.edu/people/fahad-khalil" style="text-decoration:underline; text-underline-offset:3px;">Fahad Khalil</a>
+      and <a href="https://econ.washington.edu/people/jacques-lawarree" style="text-decoration:underline; text-underline-offset:3px;">Jacques Lawarrée</a>.
+      I expect to finish in Fall 2026, and I am on the industry job market this year.
     </p>
     <p>
-      I am on the industry job market this year.
+      I hold an M.A. in Economics and an M.S. in Applied Mathematics from UW. I also have a B.A. in
+      Mathematics and Economics from Colby College, where I graduated Magna Cum Laude and was elected
+      to Phi Beta Kappa.
     </p>
-    <p>
-      In 2025 I was an Economist Intern at Amazon, where I built structural demand models on large-scale
-      survey data for Project Kuiper and a simulation engine for evaluating counterfactual pricing and
-      product scenarios. I hold an M.A. in Economics and an M.S. in Applied Mathematics from UW, and a
-      B.A. in Mathematics and Economics from Colby College (Magna Cum Laude, Phi Beta Kappa).
+  </section>
+
+  <section id="experience" class="wrap">
+    <div class="section-head">
+      <span class="mark"><span></span><span></span><span></span><span></span></span>
+      <h2>Experience</h2>
+    </div>
+    <div class="teach-row">
+      <h3>Economist Intern, Amazon</h3>
+      <span class="role-tag">Bellevue, WA · Jul–Oct 2025</span>
+    </div>
+    <p style="color:var(--faint); font-size:15px; margin-top:-8px; margin-bottom:24px;">
+      For Amazon's Project Kuiper, I built structural demand models using large-scale survey data to
+      estimate customer preferences. I used these estimates to project market share across different
+      product configurations and presented the results to leadership across several teams. I also
+      built a Python tool that let the demand team independently enter different prices and
+      configurations to compare projected market share and revenue under different scenarios.
     </p>
   </section>
 
@@ -284,24 +299,89 @@
     <div class="research-grid">
       <div class="jmp">
         <span class="tag mono">Chapter 1</span>
-        <h3>Dynamic Moral Hazard and Incentive Design</h3>
+        <h3>Dynamic Moral Hazard under Preference Change</h3>
+        <p style="font-style:italic; color:var(--paper); margin-bottom:10px;">
+          Does a team try less today just because it might start tanking tomorrow?
+        </p>
         <p>
-          How institutions should adapt incentive schemes when agents' preferences evolve over time,
-          applied to NFL draft policy.
+          I study a contracting model where an organization's priorities may shift after an early
+          failure. Using the NFL draft as a case study, where teams eliminated from contention can
+          benefit from losing through better draft position, I show that a higher probability of this
+          future shift reduces effort today. This "tanking" happens even before the team is eliminated
+          from playoff contention. The effect compounds over time: weaker teams, already more likely to
+          face the shift, pull back further and grow even weaker, resulting in a vicious cycle. I also
+          show how this pattern can be eliminated, for instance if losing carries no benefit at all.
+        </p>
+        <p style="margin-top:10px;">
+          <a href="https://github.com/sahmed95/Tanking-from-the-Start-Dynamic-Moral-Hazard-with-Change-in-Preference/blob/main/Paper.pdf">Paper →</a>
+          &nbsp;&nbsp;
           <a href="https://github.com/sahmed95/Tanking-from-the-Start-Dynamic-Moral-Hazard-with-Change-in-Preference">Repo →</a>
         </p>
+        <div style="background:var(--paper); border-radius:4px; padding:16px 16px 10px; margin-top:18px;">
+          <img src="chapter1-figure.png" alt="Chart showing first-period effort declining as the probability of a preference change rises" style="width:100%; display:block; border-radius:2px;">
+          <p style="color:#4A4D5C; font-size:13px; margin:10px 2px 4px; line-height:1.5;">
+            First-period effort (blue) declines as the probability of a preference change rises, even
+            though that change hasn't happened yet.
+          </p>
+        </div>
       </div>
       <div class="research-card">
-        <span class="tag mono">Chapter 2 · Work in Progress</span>
-        <h3>Dynamic Moral Hazard Under a Fixed Budget</h3>
-        <p>How agents allocate spending across time under a budget constraint, and how this can explain budget hoarding and end-of-year spending spikes.</p>
-        <p style="margin-top:8px;"><a href="https://github.com/sahmed95/Fixed-Budget-MH" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a></p>
+        <span class="tag mono">Chapter 2</span>
+        <h3>Fixed Budget Allocation under Hidden Effort</h3>
+        <p style="font-style:italic; margin-bottom:10px;">
+          When effort can't be observed, who should control how a fixed budget gets spent, the agent
+          doing the work, or the organization that set it?
+        </p>
+        <p>
+          I develop a model that explains patterns like budget hoarding and end-of-year spending spikes
+          as rational responses to the incentives needed to motivate effort that can't be directly
+          observed. When the agent controls how a fixed budget is spent, he saves it for the period he
+          expects to work hardest, concentrating resources at the end. When the principal controls
+          spending instead, they spend more early, prioritizing early success to build momentum.
+          Shifting control to the agent costs the principal some profit, but can raise total surplus when
+          money only moderately reduces the cost of effort.
+        </p>
+        <p style="margin-top:10px;">
+          <a href="https://github.com/sahmed95/Fixed-Budget-MH/blob/main/Fixed_Budget_Paper.pdf" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Paper →</a>
+          &nbsp;&nbsp;
+          <a href="https://github.com/sahmed95/Fixed-Budget-MH" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a>
+        </p>
+        <div style="border:1px solid var(--line); border-radius:4px; padding:16px 16px 10px; margin-top:18px;">
+          <img src="chapter2-figure.png" alt="Chart showing the welfare gain from agent-controlled spending versus organization-controlled spending, across different values of how effective money is at reducing effort cost" style="width:100%; display:block; border-radius:2px;">
+          <p style="color:var(--faint); font-size:13px; margin:10px 2px 4px; line-height:1.5;">
+            Letting the agent control spending raises total welfare across most of the range, though the
+            effect is small, and reverses once money becomes very effective at reducing effort cost.
+          </p>
+        </div>
       </div>
       <div class="research-card">
         <span class="tag mono">Chapter 3</span>
         <h3>High-Dimensional Demand Estimation</h3>
-        <p>Using Lasso and Elastic Net regularization with debiasing corrections to estimate elasticity under collinearity, validated via Monte Carlo simulation.</p>
-        <p style="margin-top:8px;"><a href="https://github.com/sahmed95/Almost-Ideal-Demand-System-HD-IV" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a></p>
+        <p style="font-style:italic; margin-bottom:10px;">
+          Was a classic model of consumer demand abandoned because it doesn't work with today's huge
+          datasets, or because it hadn't been combined with the right tools to make it work?
+        </p>
+        <p>
+          The Almost Ideal Demand System, a widely used model of consumer demand from 1980, has largely
+          been abandoned for use with modern retail data. Modern datasets often cover hundreds of
+          products at once, and the model's parameters grow quickly as the number of products grows.
+          I argue the model was sidelined because it hadn't been combined with modern machine learning
+          techniques. I adapt a debiased Lasso estimator that regularizes both the endogenous regressors
+          and the many instruments, then corrects for the bias that regularization introduces.
+          Simulations show it recovers stable price elasticities where standard methods fail.
+        </p>
+        <p style="margin-top:10px;">
+          <a href="https://github.com/sahmed95/Almost-Ideal-Demand-System-HD-IV/blob/main/High-dimensional_Demand_Estimation.pdf" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Paper →</a>
+          &nbsp;&nbsp;
+          <a href="https://github.com/sahmed95/Almost-Ideal-Demand-System-HD-IV" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt); font-size:14px;">Repo →</a>
+        </p>
+        <div style="border:1px solid var(--line); border-radius:4px; padding:16px 16px 10px; margin-top:18px;">
+          <img src="chapter3-figure.png" alt="Chart showing RMSE of cross-price elasticity estimates across nine estimators as the number of goods approaches the sample size" style="width:100%; display:block; border-radius:2px;">
+          <p style="color:var(--faint); font-size:13px; margin:10px 2px 4px; line-height:1.5;">
+            As the number of goods approaches the sample size, error explodes for most estimators. The
+            ridge and cross-fitted variants of the debiased estimator stay accurate throughout.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -316,7 +396,20 @@
         <span class="paper-year">2020</span>
         <div class="paper-body">
           <h3>NBA Decade Comparison: PCA and Machine Learning Analysis</h3>
-          <p>Built classifiers on 13,000 player-season observations, using roughly 95 features scraped from Basketball Reference. Used PCA and LDA to predict player position and decade, and L1-regularized logistic regression to predict Win Shares quartile, achieving 72.6% accuracy validated via 50-fold cross-validation.</p>
+          <p style="font-style:italic; margin-bottom:8px;">
+            Does a player's box-score stat line carry a hidden signature of their era or position, or
+            does it mostly just reflect how good they are?
+          </p>
+          <p>
+            With a classmate, I built classifiers on 13,000 player-season observations from Basketball
+            Reference, using roughly 95 features per player. PCA showed the first two components capture
+            about 60% of the variance in the data. Using that feature space to directly classify a
+            player's era or position was only modestly successful: about 38% accuracy for decade and 50%
+            for position. This suggests box-score stats alone don't cleanly separate eras or roles.
+            Predicting a player's Win Shares quartile worked much better: a model trained only on 1990s
+            players correctly classified held-out 1990s players into the right quartile 72.6% of the time,
+            cross-validated over 50 iterations.
+          </p>
           <p style="margin-top:6px;"><a href="https://github.com/sahmed95/NBA-Decade-Comparison" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
         </div>
       </li>
@@ -324,16 +417,20 @@
         <span class="paper-year">2019</span>
         <div class="paper-body">
           <h3>Game Theory in Cricket</h3>
-          <p>Built a formal game-theoretic model of bowler-batsman strategy, validated against an original dataset built from match commentary. Implemented in Stata.</p>
+          <p style="font-style:italic; margin-bottom:8px;">
+            Do professional athletes actually play the mixed strategies that game theory predicts?
+          </p>
+          <p>
+            Most tests of mixed-strategy Nash equilibrium rely on lab experiments, which often fail to
+            show that real people behave as the theory predicts. Professional sports offer a better
+            setting. For my honors thesis, I built a game-theoretic model of bowler-batsman strategy in
+            cricket. I tested it in Stata against real match data, hand-coded from commentary of the 2017
+            ICC Champions Trophy. In a simplified model, players' actual strategy frequencies matched the
+            model's Nash equilibrium predictions within one standard deviation, providing direct evidence
+            of equilibrium play. The match, however, breaks down in a richer strategy set: bowlers were
+            predicted to almost never throw one pitch type, yet did so over a third of the time.
+          </p>
           <p style="margin-top:6px;"><a href="https://github.com/sahmed95/Game-Theory-in-Cricket" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
-        </div>
-      </li>
-      <li>
-        <span class="paper-year">2019</span>
-        <div class="paper-body">
-          <h3>Attacks on RSA</h3>
-          <p>Implemented and analyzed multiple RSA cryptographic attacks in Python.</p>
-          <p style="margin-top:6px;"><a href="https://github.com/sahmed95/Attacks-on-RSA" style="text-decoration:underline; text-underline-offset:3px; color:var(--cobalt);">View project →</a></p>
         </div>
       </li>
     </ul>
@@ -356,6 +453,10 @@
       <span class="role-tag">Independent Instructor · UW</span>
     </div>
     <div class="teach-row">
+      <h3>BBUS 310 — Managerial Economics</h3>
+      <span class="role-tag">Independent Instructor · UW</span>
+    </div>
+    <div class="teach-row">
       <h3>Graduate &amp; Undergraduate Economics, various courses</h3>
       <span class="role-tag">Teaching Assistant · UW · 2019–present</span>
     </div>
@@ -375,7 +476,7 @@
       <h3>Intramural Referee</h3>
       <span class="role-tag">UW Recreation · 2023</span>
     </div>
-    <p style="color:var(--faint); font-size:15px; margin-top:-8px;">Officiated soccer games and handled on-field conflicts.</p>
+    <p style="color:var(--faint); font-size:15px; margin-top:-8px;">Officiated soccer games, including playoff matches, and handled on-field conflicts.</p>
   </section>
 
   <section id="contact" class="wrap">
