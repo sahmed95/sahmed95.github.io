@@ -84,7 +84,7 @@
   .nav-toggle{display:none;}
 
   /* hero */
-  .hero{padding:88px 0 64px;}
+  .hero{padding:88px 28px 64px;}
   .hero-grid{
     display:grid;
     grid-template-columns:1fr 220px;
@@ -126,6 +126,7 @@
   .btn.ghost:hover{background:var(--ink); color:var(--paper);}
 
   section{padding:56px 0; border-top:1px solid var(--line);}
+  section.wrap:not(.hero){padding-top:56px; padding-bottom:56px;}
   .section-head{display:flex; align-items:center; gap:10px; margin-bottom:26px;}
   .section-head h2{font-size:22px;}
 
@@ -237,13 +238,14 @@
         <h1>Shabab Ahmed</h1>
         <p class="role">University of Washington &nbsp;·&nbsp; Open to Full-Time Roles</p>
         <p class="thesis">
-          I work in contract theory and demand estimation. My theory research studies how incentives
-          shape behavior when today's actions can change tomorrow's objectives or constraints. My
-          applied work grew out of my time as an Economist Intern at Amazon. The experience showed me
-          how much the data we have and the model we choose limit what we can learn about how customers
-          switch between products. My current research asks whether the data, rather than the model,
-          can determine those patterns at the scale of modern scanner data. I am now applying this research to
-          merger simulation using retail cereal data.
+          I work in demand estimation and contract theory. As an Economist Intern at Amazon, I
+          estimated demand for a product before launch. My current research uses a flexible demand
+          model that lets the data, rather than assumptions about which products compete, determine
+          how customers switch between products. With hundreds of products, that flexibility creates
+          too many parameters for standard methods, so I use machine learning to make estimation
+          feasible. I am applying this to merger simulation using retail cereal data. My theory
+          research studies incentives when today's actions change tomorrow's objectives or
+          constraints, as in NFL tanking or year-end budget spending.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="Ahmed_Shabab_CV.pdf">Download CV</a>
@@ -399,9 +401,8 @@
   <section id="projects" class="wrap">
     <div class="section-head">
       <span class="mark"><span></span><span></span><span></span><span></span></span>
-      <h2>Projects</h2>
+      <h2>Earlier projects</h2>
     </div>
-    <p class="mono" style="color:var(--faint); margin-bottom:18px;">Earlier projects</p>
     <ul class="paper-list">
       <li>
         <span class="paper-year">2020</span>
@@ -482,7 +483,7 @@
       <h3>Summer Study Section Instructor</h3>
       <span class="role-tag">UW Math &amp; Science Upward Bound · Summer 2024 &amp; Summer 2026</span>
     </div>
-    <p style="color:var(--faint); font-size:15px; margin-top:4px; margin-bottom:20px;">Mentored students through independent research projects. Guided a hands-on solar car build.</p>
+    <p style="color:var(--faint); font-size:15px; margin-top:4px; margin-bottom:0;">Mentored students through independent research projects. Guided a hands-on solar car build.</p>
   </section>
 
   <section id="contact" class="wrap">
